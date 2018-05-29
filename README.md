@@ -61,57 +61,57 @@ BootstrapClassLoad (虚拟机启动类加载器JAVA_HOME/lib) <---ExtensionClass
 *方法静态分派演示
 *@author allen
 */
-public class StaticDispatch{
-static abstract class Human{
-}
-static class Man extends Human{
-}
-static class Woman extends Human{
-}
-public void sayHello（Human guy）{
-System.out.println（"hello,guy！"）；
-}
-public void sayHello（Man guy）{
-System.out.println（"hello,gentleman！"）；
-}
-public void sayHello（Woman guy）{
-System.out.println（"hello,lady！"）；
-}
-public static void main（String[]args）{
-Human man=new Man（）；
-Human woman=new Woman（）；
-StaticDispatch sr=new StaticDispatch（）；
-sr.sayHello（man）；
-sr.sayHello（woman）；
-}
-}
+public class StaticDispatch {</br>
+static abstract class Human{</br>
+}</br>
+static class Man extends Human{</br>
+}</br>
+static class Woman extends Human{</br>
+}</br>
+public void sayHello（Human guy）{</br>
+System.out.println（"hello,guy！"）；</br>
+}</br>
+public void sayHello（Man guy）{</br>
+System.out.println（"hello,gentleman！"）；</br>
+}</br>
+public void sayHello（Woman guy）{</br>
+System.out.println（"hello,lady！"）；</br>
+}</br>
+public static void main（String[]args）{</br>
+Human man=new Man（）；</br>
+Human woman=new Woman（）；</br>
+StaticDispatch sr=new StaticDispatch（）；</br>
+sr.sayHello（man）；</br>
+sr.sayHello（woman）；</br>
+}</br>
+}</br>
 </br>
 /**
 *方法动态分派演示
 *@author allen
 */
-public class DynamicDispatch{
-static abstract class Human{
-protected abstract void sayHello（）；
-}
-static class Man extends Human{
-@Override
-protected void sayHello（）{
-System.out.println（"man say hello"）；
-}
-}
-static class Woman extends Human{
-@Override
-protected void sayHello（）{
-System.out.println（"woman say hello"）；
-}
-}
-public static void main（String[]args）{
-Human man=new Man（）；
-Human woman=new Woman（）；
-man.sayHello（）；
-woman.sayHello（）；
-man=new Woman（）；
-man.sayHello（）；
-}
-}
+public class DynamicDispatch{</br>
+static abstract class Human{</br>
+protected abstract void sayHello（）；</br>
+}</br>
+static class Man extends Human{</br>
+@Override</br>
+protected void sayHello（）{</br>
+System.out.println（"man say hello"）；</br>
+}</br>
+}</br>
+static class Woman extends Human{</br>
+@Override</br>
+protected void sayHello（）{</br>
+System.out.println（"woman say hello"）；</br>
+}</br>
+}</br>
+public static void main（String[]args）{</br>
+Human man=new Man（）；</br>
+Human woman=new Woman（）；</br>
+man.sayHello（）；</br>
+woman.sayHello（）；</br>
+man=new Woman（）；</br>
+man.sayHello（）；</br>
+}</br>
+}</br>

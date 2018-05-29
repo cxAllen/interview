@@ -56,11 +56,11 @@ FullGC发生在老年代空间不足，如创建大对象时直接要分配在�
 BootstrapClassLoad (虚拟机启动类加载器JAVA_HOME/lib) <---ExtensionClassLoad（扩展类加载器JAVA_HOME/lib/ext) <---ApplicationClassLoad(应用类加载器classPath) <---自定义类加载器<br/>
 一个类再被加载的时候，当前的类加载器会先将类交由父类加载器加载。<br/>
 
-9.分派：静态分派和动态分派？
-/**
-*方法静态分派演示
-*@author allen
-*/
+9.分派：静态分派和动态分派？</br>
+/**</br>
+*方法静态分派演示</br>
+*@author allen</br>
+*/</br>
 public class StaticDispatch {</br>
 static abstract class Human{</br>
 }</br>
@@ -86,10 +86,10 @@ sr.sayHello（woman）；</br>
 }</br>
 }</br>
 </br>
-/**
-*方法动态分派演示
-*@author allen
-*/
+/**</br>
+*方法动态分派演示</br>
+*@author allen</br>
+*/</br>
 public class DynamicDispatch{</br>
 static abstract class Human{</br>
 protected abstract void sayHello（）；</br>

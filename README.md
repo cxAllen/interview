@@ -115,3 +115,9 @@ man=new Woman（）；</br>
 man.sayHello（）；</br>
 }</br>
 }</br>
+
+JVM内存优化？</br>
+jmap: Java内存映射工具(Java Memory Map)，主要用于打印指定Java进程、核心文件或远程调试服务器的共享对象内存映射或堆内存细节。 可以导出heap dump文件，然后利用MAT内存分析工具进行分析问题所在。</br>
+jstack: Java堆栈跟踪工具，主要用于打印指定Java进程、核心文件或远程调试服务器的Java线程的堆栈跟踪信息。<br/>
+JVM工具详细：https://blog.csdn.net/zhongjh1/article/details/52909720
+

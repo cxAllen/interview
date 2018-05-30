@@ -54,49 +54,70 @@
     缺点：代码复杂；线程安全；
 
     什么是多线程的上下文切换？
-
+    多线程上下文切换时指CPU给每个线程分配时间片，在时间片时间到后CPU需要记录每个线程执行位置，便于下次执行。
 
     ThreadLocal的设计理念与作用？
+    Java中的ThreadLocal类允许我们创建只能被同一个线程读写的变量。
 
     ThreadPool（线程池）用法与优势？
+    减少线程创建和销毁次数，复用线程，控制最大线程数。
 
     Concurrent包里的其他东西：ArrayBlockingQueue、CountDownLatch等等。
 
     synchronized和ReentrantLock的区别？
+    synchronized是关键字，实现原理是利用字节码指令monitorEnter/monitorExit来控制程序访问。每个锁都是锁的对象，对象头中有标志位来标识锁的状态。
+    ReentrantLock是利用AQS同步队列器的独占资源模式，控制state状态来实现锁机制。
 
     Semaphore有什么作用？
+    它的作用是限制某段代码块的并发数。
+    信号量可以用来做限流，创建n个许可证，表示只允许n个线程并发执行。
 
     Java Concurrency API中的Lock接口(Lock interface)是什么？对比同步它有什么优势？
-
+    可以使线程在等待锁的时候响应中断，可以设置成公平锁。
+    
     Hashtable的size()方法中明明只有一条语句”return count”，为什么还要做同步？
 
     ConcurrentHashMap的并发度是什么？
+    同时可以有多少线程并发执行。
 
     ReentrantReadWriteLock读写锁的使用？
+    读读不互斥，读写互斥，写写互斥
 
     CyclicBarrier和CountDownLatch的用法及区别？
+    都是用来控制多个线程达到同一状态，再统一执行一段逻辑。
+    区别是CyclicBarrier是可重用的；一个是加法，一个减法；
 
     LockSupport工具？
-
+    LockSupport是JDK中比较底层的类，用来创建锁和其他同步工具类的基本线程阻塞。
+    
     Condition接口及其实现原理？
+    相当于wait、notify用于线程间的通信。实现原理是线程1.lock()加入AQS等待队列，调用await方法后从AQS等待队列中移除，并加入condition等待队列，
+    线程2获取到锁加入AQS等待队列，线程2调用signal方法准备唤醒线程1从condition队列取出并加入AQS队列，但要在线程2执行unlock后才会从AQS队列中唤醒。
 
     Fork/Join框架的理解?
+    拆分一个大的任务为多个小任务来执行逻辑。
 
     wait()和sleep()的区别?
+    wait()会释放锁然后会一直等待被唤醒，sleep()不释放锁到时间后就重新进入可运行状态。
 
     线程的五个状态（五种状态，创建、就绪、运行、阻塞和死亡）?
-
     start()方法和run()方法的区别？
-
     Runnable接口和Callable接口的区别？
 
     volatile关键字的作用？
+    内存可见性：某个线程更新共享变量到主内存时，会将其他线程的该变量在工作内存中副本失效标志位置为失效，下次其他线程读取该变量时就会去主内存重新load。
+    禁止指令重排序：字节码指令中会有标志位，使得后面的字节码指令无法被优化到标志位之前执行。
 
     Java中如何获取到线程dump文件？
+    jps获取线程pid jstack pid 打印堆栈信息
 
     线程和进程有什么区别？
+    进程是系统进行资源分配的基本单位，有独立的内存地址空间
+    线程是CPU独立运行和独立调度的基本单位，没有单独地址空间，有独立的栈，局部变量，寄存器， 程序计数器等。
+    
 
     线程实现的方式有几种（四种）？
+    new Thread() 继承Thread、实现runnable接口、线程池、callable和future
 
     高并发、任务执行时间短的业务怎样使用线程池？并发不高、任务执行时间长的业务怎样使用线程池？并发高、业务执行时间长的业务怎样使用线程池？
 

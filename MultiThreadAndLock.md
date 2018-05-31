@@ -15,7 +15,7 @@
 
 ![image](https://github.com/cxAllen/interview/blob/master/markword.png)
 ![image](https://github.com/cxAllen/interview/blob/master/%E9%94%81%E4%BC%98%E5%8C%96%E7%AE%80%E5%8C%96%E6%B5%81%E7%A8%8B.png)
-备注：epoch是对象分代年龄<br/>
+备注：epoch英文字面意思是时代<br/>
 
 synchronized和ReentrantLock的区别？<br/>
     synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit这两个字节码指令，<br/>

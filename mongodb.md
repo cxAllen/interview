@@ -1,2 +1,3 @@
 # MongoDB
- （蒙古DB）
+ 
+简介：https://www.jianshu.com/p/baea1bce6de3

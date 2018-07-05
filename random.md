@@ -1,3 +1,4 @@
+王节 321283199502251220	15021879939
 
 cd C:\DevSoftware\kafka_2.11-0.10.1.0\bin\windows
 zookeeper-server-start.bat ..\..\config\zookeeper.properties &
